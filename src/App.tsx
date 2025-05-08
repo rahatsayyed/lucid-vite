@@ -6,6 +6,8 @@ import {
   // type LucidEvolution,
   type WalletApi,
 } from "@lucid-evolution/lucid";
+import { useCardano } from "./context/CardanoContext";
+import { disconnect } from "process";
 type Wallet = {
   name: string;
   icon: string;
@@ -33,7 +35,7 @@ function App() {
 
   const wallets = getWallets();
   // const [lucid, setLucid] = useState<LucidEvolution | null>(null);
-  const [address, setAddress] = useState<string>("not connected");
+  const { address, setCardano } = useCardano();
   async function connectWallet(wallet: Wallet) {
     const [api, lucid] = await Promise.all([
       wallet.enable(),
@@ -42,9 +44,10 @@ function App() {
     lucid.selectWallet.fromAPI(api);
 
     const address = await lucid.wallet().address();
-    console.log(address);
-    // setLucid(lucid);
-    setAddress(address);
+    setCardano((prev) => ({ ...prev, lucid, address }));
+  }
+  function disconnect() {
+    setCardano({});
   }
   return (
     <>
@@ -53,7 +56,12 @@ function App() {
           {wallet.name}
         </button>
       ))}
-      <p>Address: {address}</p>
+      {address && (
+        <>
+          <p>Address: {address}</p>
+          <button onClick={disconnect}>disconnect</button>
+        </>
+      )}
     </>
   );
 }

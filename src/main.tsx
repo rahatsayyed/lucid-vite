@@ -5,10 +5,13 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 import { Buffer } from "buffer";
+import CardanoProvider from "./context/CardanoContext.tsx";
 window.Buffer = Buffer;
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
+    <CardanoProvider>
+      <App />
+    </CardanoProvider>
   </StrictMode>
 );
