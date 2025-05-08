@@ -11,6 +11,12 @@ export default defineConfig({
       crypto: "crypto-browserify",
     },
   },
+  define: {
+    global: "window", // 👈 This makes `global` work like in Node.js
+  },
+  optimizeDeps: {
+    include: ["buffer", "process", "crypto-browserify"],
+  },
   build: {
     target: "es2020",
   },
