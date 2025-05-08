@@ -3,7 +3,7 @@ import "./App.css";
 import {
   Blockfrost,
   Lucid,
-  type LucidEvolution,
+  // type LucidEvolution,
   type WalletApi,
 } from "@lucid-evolution/lucid";
 type Wallet = {
@@ -32,7 +32,7 @@ function App() {
   }
 
   const wallets = getWallets();
-  const [lucid, setLucid] = useState<LucidEvolution | null>(null);
+  // const [lucid, setLucid] = useState<LucidEvolution | null>(null);
   const [address, setAddress] = useState<string>("not connected");
   async function connectWallet(wallet: Wallet) {
     const [api, lucid] = await Promise.all([
@@ -43,7 +43,7 @@ function App() {
 
     const address = await lucid.wallet().address();
     console.log(address);
-    setLucid(lucid);
+    // setLucid(lucid);
     setAddress(address);
   }
   return (

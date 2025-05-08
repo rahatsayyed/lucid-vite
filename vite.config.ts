@@ -18,7 +18,7 @@ export default defineConfig({
     include: ["buffer", "process", "crypto-browserify"],
   },
   build: {
-    target: "es2020",
+    target: "esnext",
   },
   server: {
     proxy: {
