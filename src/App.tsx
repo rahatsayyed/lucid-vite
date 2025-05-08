@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import {
   Blockfrost,
@@ -7,7 +6,6 @@ import {
   type WalletApi,
 } from "@lucid-evolution/lucid";
 import { useCardano } from "./context/CardanoContext";
-import { disconnect } from "process";
 type Wallet = {
   name: string;
   icon: string;
