@@ -25,3 +25,9 @@
    - **Ready-to-Use Wallet Components**: Provide pre-built, customizable React components for common tasks, like connecting a wallet or displaying a balance.
    - **Easy Customization**: Ensure these components are flexible so developers can style or modify them to fit their app’s design.
    - **Example Need**: A `<WalletConnect />` component that handles wallet connection and shows the user’s balance, with customizable colors and layout.
+
+6. **Deriving Types From Blueprint `plutus.json`**:
+     - **Type-Safe Off-Chain Code**: Automatically generate TypeScript types from the compiled Plutus plutus.json (blueprint) file to reduce manual errors 
+   - **Better Dev Experience**: Enable IDE auto-completion and validation when interacting with smart contracts—developers shouldn’t have to manually define Datum, Redeemer, or parameter types.
+   - **Example Need**: A CLI tool or library function like lucid generate-types ./plutus.json that outputs a .ts file with properly typed interfaces for scripts, validators, and redeemers.
+   
