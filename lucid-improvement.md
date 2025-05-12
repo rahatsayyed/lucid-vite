@@ -1,9 +1,9 @@
-1. [Things I’d Like to See Improved](#things-id-like-to-see-improved)
-2. [Things I Can Contribute On](#things-i-can-contibute-on)
+1. [Things I'd Like to See Improved](#things-id-like-to-see-improved)
+2. [Things I Can Contribute On](#things-i-can-contribute-on)
 
 ---
 
-# Thing's I did like to see improve
+# Things I'd like to see improved
 
 1. **Improved Token and Balance Management**:
 
